@@ -1,0 +1,45 @@
+{
+  "name": "vscode-ssen-touchbar",
+  "version": "0.1.0",
+  "description": "SSen's Touchbar Setting",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Seoyeon Lee <i@ssen.name>",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "editor.action.revealDefinition",
+        "title": "  Go To Definition  "
+      },
+      {
+        "command": "editor.action.goToReferences",
+        "title": "  Go To References  "
+      }
+    ],
+    "menus": {
+      "touchBar": [
+        {
+          "command": "editor.action.goToReferences",
+          "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+          "command": "editor.action.revealDefinition",
+          "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "SSen's Touchbar Config"
+    }
+  }
+}
