@@ -7,7 +7,11 @@
     "test": "npm test"
   },
   "author": "Seoyeon Lee <i@ssen.name>",
+  "publisher": "iamssen",
   "license": "MIT",
+  "repository": "github:iamssen/vscode-touchbar",
+  "bugs": "https://github.com/iamssen/vscode-touchbar/issues",
+  "homepage": "https://github.com/iamssen/vscode-touchbar",
   "engines": {
     "vscode": "^1.17.0"
   },
@@ -18,22 +22,66 @@
     "commands": [
       {
         "command": "editor.action.revealDefinition",
-        "title": "  Go To Definition  "
+        "title": "Go To Definition"
       },
       {
         "command": "editor.action.goToReferences",
-        "title": "  Go To References  "
+        "title": "Go To References"
+      },
+      {
+        "command": "workbench.action.showCommands",
+        "title": "CMD"
+      },
+      {
+        "command": "typescript.restartTsServer",
+        "title": "Restart TSServer"
+      },
+      {
+        "command": "ssen.touchbar.run",
+        "title": "Run"
+      },
+      {
+        "command": "ssen.touchbar.debug",
+        "title": "Debug"
+      },
+      {
+        "command": "workbench.action.terminal.openNativeConsole",
+        "title": "Terminal"
       }
     ],
     "menus": {
       "touchBar": [
         {
           "command": "editor.action.goToReferences",
+          "group": "g2",
           "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
         },
         {
           "command": "editor.action.revealDefinition",
+          "group": "g1",
           "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+          "command": "workbench.action.showCommands",
+          "group": "g3"
+        },
+        {
+          "command": "typescript.restartTsServer",
+          "group": "g4"
+        },
+        {
+          "command": "ssen.touchbar.run",
+          "group": "g5",
+          "when": "!inDebugMode"
+        },
+        {
+          "command": "ssen.touchbar.debug",
+          "group": "g6",
+          "when": "!inDebugMode"
+        },
+        {
+          "command": "workbench.action.terminal.openNativeConsole",
+          "group": "g7"
         }
       ]
     },
