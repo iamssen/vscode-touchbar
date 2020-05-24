@@ -1,10 +1,12 @@
 {
   "name": "vscode-ssen-touchbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SSen's Touchbar Setting",
   "main": "main.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "publish": "vsce package && open . && open https://marketplace.visualstudio.com/manage/publishers/iamssen",
+    "pack": "vsce package"
   },
   "author": "Seoyeon Lee <i@ssen.name>",
   "publisher": "iamssen",
@@ -54,12 +56,12 @@
         {
           "command": "editor.action.goToReferences",
           "group": "g2",
-          "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+          "when": "editorHasReferenceProvider"
         },
         {
           "command": "editor.action.revealDefinition",
           "group": "g1",
-          "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+          "when": "editorHasDefinitionProvider"
         },
         {
           "command": "workbench.action.showCommands",
