@@ -1,6 +1,6 @@
 {
   "name": "vscode-ssen-touchbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SSen's Touchbar Setting",
   "main": "main.js",
   "scripts": {
